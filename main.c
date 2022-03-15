@@ -8,8 +8,6 @@
 #define READ 0
 #define WRITE 1
 
-// Change this to input from terminal, should also be capital if not coming from termial
-
 int debugger = 0;
 int generateRandomNumber();
 int pipeIsOk(int pipefd[]);
