@@ -16,11 +16,11 @@ void parentAction(int pipefd[], int pipefd2[]);
 void childAction(int pipefd[], int pipefd2[]);
 
 // Time complexity: O(log(n))
-// Space complecity: O(1)
+// Space complexity: O(1)
 int main(int argc, char **argv)
 {
     if(argc > 1)
-        debugger = atoi(argv[1]); // if 1 is specified in cmd then debugger runs
+        debugger = atoi(argv[1]); // If 1 is specified as argument when running the program debugger starts
 
     int pipefd[2], pipefd2[2];
     pid_t pid;
@@ -113,8 +113,8 @@ void childAction(int pipefd[], int pipefd2[])
 {
     int correctNumber = generateRandomNumber(), parentsGuess, responseToParent;
     printf("The child chose number %d \n", correctNumber);
-    close(pipefd[WRITE]); // The child is not going to write to the first pipe, close the write end of the pipe.
-    close(pipefd2[READ]); // The child is not going to read from the second pipe, close the read end of the pipe.
+    close(pipefd[WRITE]); // The child is not going to write to the first pipe, close the write end of the pipe
+    close(pipefd2[READ]); // The child is not going to read from the second pipe, close the read end of the pipe
 
     while (1337)
     {
